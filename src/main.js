@@ -30,6 +30,9 @@ async function onFormSubmit(event) {
   currentPage = 1;
 
   if (!query) {
+    hidenLoader();
+    hidenLoader();
+    hidenLoadMore();
     iziToast.error({
       title: 'Error',
       message: '❌ Please enter a search query!',
@@ -45,6 +48,9 @@ async function onFormSubmit(event) {
     maxPage = Math.ceil(data.totalHits / pageSize);
 
     if (data.hits.length === 0) {
+      hidenLoader();
+      hidenLoader();
+      hidenLoadMore();
       iziToast.error({
         title: 'Error',
         message:
