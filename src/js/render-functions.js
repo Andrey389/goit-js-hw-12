@@ -2,10 +2,6 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const gallery = document.querySelector('.gallery');
-const lightbox = new SimpleLightbox('.gallery a', {
-  captionsData: 'tags',
-  captionsDelay: 250,
-});
 
 function articleTemplate(obj) {
   const {
@@ -23,7 +19,7 @@ function articleTemplate(obj) {
       lodind="lazy" 
       class="gallery-image" 
       src="${webformatURL}" 
-      alt="Image ${tags}" 
+      alt="${tags}" 
       />
   </a>
   <div class="descrip-gallery">
@@ -46,7 +42,10 @@ function articleTemplate(obj) {
   </div>
 </li>`;
 }
-
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'tags',
+  captionsDelay: 250,
+});
 function articlesTemplate(arr) {
   return arr.map(articleTemplate).join('');
 }

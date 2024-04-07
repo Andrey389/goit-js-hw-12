@@ -44,6 +44,16 @@ async function onFormSubmit(event) {
 
     maxPage = Math.ceil(data.totalHits / pageSize);
 
+    if (data.hits.length === 0) {
+      iziToast.error({
+        title: 'Error',
+        message:
+          '❌ Sorry, there are no images matching your search query. Please try again!',
+        position: 'topRight',
+      });
+      return;
+    }
+
     renderImages(data.hits);
   } catch {
     console.log(err);
@@ -66,6 +76,7 @@ async function onLoadMoreClick() {
     console.log(err);
   }
 
+  myScroll();
   checkBtnStatus();
   hidenLoader();
 }
@@ -110,4 +121,12 @@ function loaderElStatus() {
   } else {
     hidenLoaderend();
   }
+}
+
+function myScroll() {
+  const height = refs.gallery.firstChild.getBoundingClientRect().height;
+  scrollBy({
+    top: height * 2,
+    behavior: 'smooth',
+  });
 }

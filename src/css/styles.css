@@ -172,3 +172,7 @@ img {
 .load-btn-submit {
   width: 125px;
 }
+
+.iziToast>.iziToast-body .iziToast-icon.ico-error{
+  display: none;
+}
