@@ -43,7 +43,7 @@ function articleTemplate(obj) {
 </li>`;
 }
 const lightbox = new SimpleLightbox('.gallery a', {
-  captionsData: 'hits.tags',
+  captionsData: 'hits tags',
   captionsDelay: 250,
 });
 function articlesTemplate(arr) {

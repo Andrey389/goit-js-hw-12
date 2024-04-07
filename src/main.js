@@ -31,7 +31,7 @@ async function onFormSubmit(event) {
 
   if (!query) {
     hidenLoader();
-    hidenLoader();
+    hidenLoaderend();
     hidenLoadMore();
     iziToast.error({
       title: 'Error',
@@ -49,7 +49,7 @@ async function onFormSubmit(event) {
 
     if (data.hits.length === 0) {
       hidenLoader();
-      hidenLoader();
+      hidenLoaderend();
       hidenLoadMore();
       iziToast.error({
         title: 'Error',
