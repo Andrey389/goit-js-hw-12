@@ -8,8 +8,18 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    
+    <form class="form-search">
+      <input class="input-text" type="text" name="input" placeholder="Search images...">
+      <button class="btn-submit" type="submit">Search</button>
+    </form>
+    <ul class="gallery"></ul>
+    <span class="loader hidden">Loading images, please wait...</span>
+    <div class="form-search">
+      <button class="load-btn-submit btn-submit hidden" type="submit">Load more</button>
+    </div>
 
     <script type="module" src="./main.js"></script>
+    <script type="module" src="./js/pixabay-api.js"></script>
+    <script type="module" src="./js/render-functions.js"></script>
   </body>
 </html>
