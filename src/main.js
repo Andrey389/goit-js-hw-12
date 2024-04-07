@@ -9,6 +9,7 @@ const refs = {
   inputEl: document.querySelector('.input-text'),
   gallery: document.querySelector('.gallery'),
   loaderEl: document.querySelector('.loader'),
+  loaderendEl: document.querySelector('.loaderend'),
   btnLoadMore: document.querySelector('.load-btn-submit'),
 };
 
@@ -87,8 +88,26 @@ function hidenLoader() {
 
 function checkBtnStatus() {
   if (currentPage >= maxPage) {
+    loaderElStatus();
     hidenLoadMore();
   } else {
+    loaderElStatus();
     showLoadMore();
+  }
+}
+
+function showLoaderend() {
+  refs.loaderendEl.classList.remove('hidden');
+}
+
+function hidenLoaderend() {
+  refs.loaderendEl.classList.add('hidden');
+}
+
+function loaderElStatus() {
+  if (currentPage >= maxPage) {
+    showLoaderend();
+  } else {
+    hidenLoaderend();
   }
 }
